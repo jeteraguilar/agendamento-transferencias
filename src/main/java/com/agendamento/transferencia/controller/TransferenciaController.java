@@ -3,9 +3,7 @@ package com.agendamento.transferencia.controller;
 import com.agendamento.transferencia.model.Transferencia;
 import com.agendamento.transferencia.service.TransferenciaService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,6 +15,11 @@ public class TransferenciaController {
 
     public TransferenciaController(TransferenciaService transferenciaService) {
         this.transferenciaService = transferenciaService;
+    }
+
+    @PostMapping("/agendar")
+    public ResponseEntity<Transferencia> agendar(@RequestBody Transferencia transferencia) {
+        return ResponseEntity.ok(transferenciaService.agendarTransferencia(transferencia));
     }
 
     @GetMapping("/extrato")
