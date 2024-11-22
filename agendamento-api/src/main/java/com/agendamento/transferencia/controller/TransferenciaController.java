@@ -17,11 +17,13 @@ public class TransferenciaController {
         this.transferenciaService = transferenciaService;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/agendar")
     public ResponseEntity<Transferencia> agendar(@RequestBody Transferencia transferencia) {
         return ResponseEntity.ok(transferenciaService.agendarTransferencia(transferencia));
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/extrato")
     public ResponseEntity<List<Transferencia>> listar() {
         return ResponseEntity.ok(transferenciaService.listarTransferencias());
