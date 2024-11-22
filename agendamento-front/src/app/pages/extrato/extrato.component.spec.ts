@@ -6,12 +6,10 @@ describe('ExtratoComponent', () => {
   let component: ExtratoComponent;
   let fixture: ComponentFixture<ExtratoComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ExtratoComponent]
-    })
-    .compileComponents();
-
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ExtratoComponent]
+    });
     fixture = TestBed.createComponent(ExtratoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
