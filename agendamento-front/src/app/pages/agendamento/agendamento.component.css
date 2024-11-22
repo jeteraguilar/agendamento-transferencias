@@ -1,0 +1,65 @@
+.agendamento-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;  /* Título em preto */
+  font-weight: bold;
+  font-size: 24px;  /* Fonte maior */
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.custom-width {
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  width: 150px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.green-button {
+  background-color: #28a745;  /* Verde */
+  color: white;
+  font-weight: bold;
+}
+
+.blue-button {
+  background-color: #007bff;  /* Azul */
+  color: white;
+  font-weight: bold;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* Estilo para o campo dataAgendamento (não editável) */
+input[readonly] {
+  background-color: #e9ecef;  /* Cor de fundo mais clara para indicar que é não editável */
+}
+
+
+button {
+  width: 48%;
+}
+

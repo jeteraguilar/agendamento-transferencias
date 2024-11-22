@@ -1,0 +1,44 @@
+<div class="agendamento-container small-container">
+  <h2 class="page-title">Agendar Transferência</h2>
+
+  <form (ngSubmit)="agendar()" class="agendamento-form small-form">
+    <div class="form-fields">
+      <!-- Conta Origem -->
+      <mat-form-field appearance="outline" class="custom-width smaller-field">
+        <mat-label>Conta Origem</mat-label>
+        <input matInput [(ngModel)]="transferencia.contaOrigem" name="contaOrigem" required>
+      </mat-form-field>
+
+      <!-- Conta Destino -->
+      <mat-form-field appearance="outline" class="custom-width smaller-field">
+        <mat-label>Conta Destino</mat-label>
+        <input matInput [(ngModel)]="transferencia.contaDestino" name="contaDestino" required>
+      </mat-form-field>
+
+      <!-- Valor -->
+      <mat-form-field appearance="outline" class="custom-width smaller-field">
+        <mat-label>Valor</mat-label>
+        <input matInput [(ngModel)]="transferencia.valor" name="valor" type="number" required>
+      </mat-form-field>
+
+      <!-- Data Agendamento -->
+      <mat-form-field appearance="outline" class="custom-width smaller-field">
+        <mat-label>Data de Agendamento</mat-label>
+        <input matInput [(ngModel)]="transferencia.dataAgendamento" name="dataAgendamento" [readonly]="true" [value]="transferencia.dataAgendamento | date:'dd/MM/yyyy'">
+      </mat-form-field>
+
+      <!-- Data da Transferência -->
+      <mat-form-field appearance="outline" class="custom-width smaller-field">
+        <mat-label>Data da Transferência</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="transferencia.dataTransferencia" name="dataTransferencia" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="button-container small-button-container">
+      <button mat-raised-button class="green-button small-button" type="submit">Agendar</button>
+      <button mat-raised-button color="primary" class="small-button" (click)="voltar()">Voltar</button>
+    </div>
+  </form>
+</div>
